@@ -15,7 +15,7 @@ Kenzie assignment: Strings!
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Amanda Simmons"
+__author__ = "Amanda Simmons, Yaseen helped me get my last 3 tests to pass."
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
@@ -46,10 +46,10 @@ def donuts(count):
 
 def both_ends(s):
     # your code here
-    if len(s) < 2:
-        return ''
+    if len(s) > 2:
+        return s[:2] + s[-2:]
     else:
-        return s[:2][-1:-3]
+        return ''
 
 
 # C. fix_start
@@ -65,10 +65,16 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
+    # frequency = s.count(s[0])
+    first_letter = s[0]
     new_s = s[1:]
-    new_s.replace(s[0], '*')
-    final_s = s[0] + new_s
-    return final_s
+
+    # if frequency > 1:
+    final_s = new_s.replace(first_letter, '*')
+    final = first_letter + final_s
+    return final
+    # else:
+    #     return s
 
 
 # D. mix_up
@@ -132,7 +138,7 @@ def not_bad(s):
     knot = s.find("not")
     bad = s.find("bad")
     good_str = s[:knot] + "good" + s[(bad + 3):]
-    if bad > knot and len(knot) > 0:
+    if bad > knot and s.count("not") > 0:
         return good_str
     else:
         return s
@@ -151,10 +157,10 @@ def not_bad(s):
 def front_back(a, b):
     # your code here
     # if not (len(a) % 2) == 0 or not (len(b) % 2) == 0:
-    a_front = a[:(len(a)/2) + 1]
-    b_front = b[:(len(b)/2) + 1]
-    a_back = a[(len(a)/2) + 1:]
-    b_back = b[(len(b)/2) + 1:]
+    a_front = a[:(len(a)//2)]
+    b_front = b[:(len(b)//2)]
+    a_back = a[(len(a)//2):]
+    b_back = b[(len(b)//2):]
 
     a_front_odd = a[:(len(a)//2) + 1]
     b_front_odd = b[:(len(b)//2) + 1]
@@ -164,5 +170,12 @@ def front_back(a, b):
     if (len(a) % 2) == 0 and (len(b) % 2) == 0:
         return a_front + b_front + a_back + b_back
 
+    if (len(a) % 2) == 0 and not (len(b) % 2) == 0:
+        return a_front + b_front_odd + a_back + b_back_odd
+
+    if not (len(a) % 2) == 0 and (len(b) % 2) == 0:
+        return a_front_odd + b_front + a_back_odd + b_back
+
     if not (len(a) % 2) == 0 and not (len(b) % 2) == 0:
         return a_front_odd + b_front_odd + a_back_odd + b_back_odd
+    # both even, a even and b odd, a odd and b even, both odd
