@@ -150,4 +150,19 @@ def not_bad(s):
 
 def front_back(a, b):
     # your code here
-    return
+    # if not (len(a) % 2) == 0 or not (len(b) % 2) == 0:
+    a_front = a[:(len(a)/2) + 1]
+    b_front = b[:(len(b)/2) + 1]
+    a_back = a[(len(a)/2) + 1:]
+    b_back = b[(len(b)/2) + 1:]
+
+    a_front_odd = a[:(len(a)//2) + 1]
+    b_front_odd = b[:(len(b)//2) + 1]
+    a_back_odd = a[(len(a)//2) + 1:]
+    b_back_odd = b[(len(b)//2) + 1:]
+
+    if (len(a) % 2) == 0 and (len(b) % 2) == 0:
+        return a_front + b_front + a_back + b_back
+
+    if not (len(a) % 2) == 0 and not (len(b) % 2) == 0:
+        return a_front_odd + b_front_odd + a_back_odd + b_back_odd
