@@ -15,7 +15,7 @@ Kenzie assignment: Strings!
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Amanda Simmons, Yaseen helped me get my last 3 tests to pass."
+__author__ = "Amanda Simmons, I looked at the python docs, as well as various other resources to find/ undestand methods to use, and Yaseen helped me get my last 3 tests to pass."
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
