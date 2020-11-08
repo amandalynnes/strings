@@ -129,7 +129,13 @@ def verbing(s):
 
 def not_bad(s):
     # your code here
-    return
+    knot = s.find("not")
+    bad = s.find("bad")
+    good_str = s[:knot] + "good" + s[(bad + 3):]
+    if bad > knot and len(knot) > 0:
+        return good_str
+    else:
+        return s
 
 
 # G. front_back
