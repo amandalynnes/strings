@@ -65,7 +65,10 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
-    return
+    new_s = s[1:]
+    new_s.replace(s[0], '*')
+    final_s = s[0] + new_s
+    return final_s
 
 
 # D. mix_up
@@ -80,7 +83,19 @@ def fix_start(s):
 
 def mix_up(a, b):
     # your code here
-    return
+
+    # first_a = a[0:2]
+    # first_b = b[0:2]
+
+    # second_a = a[2:]
+    # second_b = b[2:]
+
+    last_a = b[0:2] + a[2:]
+    last_b = a[0:2] + b[2:]
+
+    join_str = last_a + ' ' + last_b
+
+    return join_str
 
 
 # E. verbing
