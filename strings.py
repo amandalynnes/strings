@@ -108,7 +108,14 @@ def mix_up(a, b):
 
 def verbing(s):
     # your code here
-    return
+    end_ing = "ing"
+    end = "ly"
+    if len(s) >= 3 and not (s[-3:]) == "ing":
+        return s + end_ing
+    elif len(s) >= 3 and (s[-3:]) == "ing":
+        return s + end
+    else:
+        return s
 
 
 # F. not_bad
